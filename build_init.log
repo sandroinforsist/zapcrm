@@ -1,0 +1,175 @@
+psql:supabase/migrations/20251201000000_schema_init.sql:24: NOTICE:  extension "uuid-ossp" already exists, skipping
+CREATE EXTENSION
+psql:supabase/migrations/20251201000000_schema_init.sql:25: NOTICE:  extension "pgcrypto" already exists, skipping
+CREATE EXTENSION
+psql:supabase/migrations/20251201000000_schema_init.sql:27: NOTICE:  extension "unaccent" already exists, skipping
+CREATE EXTENSION
+psql:supabase/migrations/20251201000000_schema_init.sql:29: NOTICE:  extension "pg_net" already exists, skipping
+CREATE EXTENSION
+psql:supabase/migrations/20251201000000_schema_init.sql:44: NOTICE:  relation "organizations" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:62: NOTICE:  relation "organization_settings" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:68: NOTICE:  column "ai_enabled" of relation "organization_settings" already exists, skipping
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:87: NOTICE:  relation "profiles" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:101: NOTICE:  relation "lifecycle_stages" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+INSERT 0 0
+psql:supabase/migrations/20251201000000_schema_init.sql:126: NOTICE:  relation "crm_companies" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:159: NOTICE:  relation "boards" already exists, skipping
+CREATE TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:164: NOTICE:  relation "idx_boards_org_key_unique" already exists, skipping
+CREATE INDEX
+DO
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:226: NOTICE:  relation "board_stages" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:255: NOTICE:  relation "contacts" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:273: NOTICE:  relation "products" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:281: NOTICE:  column "default_product_id" of relation "boards" already exists, skipping
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:284: NOTICE:  relation "boards_default_product_id_idx" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:313: NOTICE:  relation "deals" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:329: NOTICE:  relation "deal_items" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:349: NOTICE:  relation "activities" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:358: NOTICE:  column "client_company_id" of relation "activities" already exists, skipping
+psql:supabase/migrations/20251201000000_schema_init.sql:358: NOTICE:  column "participant_contact_ids" of relation "activities" already exists, skipping
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:360: NOTICE:  relation "idx_activities_client_company_id" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:361: NOTICE:  relation "idx_activities_participant_contact_ids" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:373: NOTICE:  relation "tags" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:390: NOTICE:  relation "custom_field_definitions" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:410: NOTICE:  relation "leads" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:433: NOTICE:  relation "user_settings" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:448: NOTICE:  relation "ai_conversations" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:472: NOTICE:  relation "ai_decisions" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:491: NOTICE:  relation "ai_audio_notes" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:508: NOTICE:  relation "organization_invites" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:525: NOTICE:  relation "system_notifications" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:543: NOTICE:  relation "ai_suggestion_interactions" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:547: NOTICE:  relation "idx_ai_suggestion_user" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:548: NOTICE:  relation "idx_ai_suggestion_entity" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:563: NOTICE:  relation "ai_prompt_templates" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:567: NOTICE:  relation "idx_ai_prompt_templates_org_key" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:568: NOTICE:  relation "idx_ai_prompt_templates_org_key_active" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:572: NOTICE:  relation "ai_prompt_templates_org_key_version_unique" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:577: NOTICE:  relation "ai_prompt_templates_org_key_active_unique" already exists, skipping
+CREATE INDEX
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+psql:supabase/migrations/20251201000000_schema_init.sql:622: NOTICE:  relation "ai_feature_flags" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:627: NOTICE:  relation "ai_feature_flags_org_key_unique" already exists, skipping
+CREATE INDEX
+psql:supabase/migrations/20251201000000_schema_init.sql:630: NOTICE:  relation "idx_ai_feature_flags_org" already exists, skipping
+CREATE INDEX
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+psql:supabase/migrations/20251201000000_schema_init.sql:676: NOTICE:  relation "rate_limits" already exists, skipping
+CREATE TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:678: NOTICE:  relation "idx_rate_limits_lookup" already exists, skipping
+CREATE INDEX
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:697: NOTICE:  relation "user_consents" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:718: NOTICE:  relation "audit_logs" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:737: NOTICE:  relation "security_alerts" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+INSERT 0 0
+INSERT 0 0
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+CREATE FUNCTION
+DROP TRIGGER
+CREATE TRIGGER
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+DROP POLICY
+CREATE POLICY
+psql:supabase/migrations/20251201000000_schema_init.sql:1103: NOTICE:  relation "deal_notes" already exists, skipping
+CREATE TABLE
+ALTER TABLE
+psql:supabase/migrations/20251201000000_schema_init.sql:Cancel request sent
+1107: NOTICE:  relation "idx_deal_notes_deal" already exists, skipping
+CREATE INDEX

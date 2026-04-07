@@ -657,7 +657,11 @@ Configuravel em: Configuracoes > IA
 
 ---
 
-## 15. Mudancas Recentes (Marco 2026)
+## 15. Mudancas Recentes (Marco/Abril 2026)
+
+### Commit: restrict navigation for 'vendedor' role
+- Restrição de acesso à página de Configurações para usuários com o papel `vendedor`.
+- Remoção total do item "WhatsApp" do menu lateral para focar as operações do vendedor nos Contatos e Pipeline de Vendas.
 
 ### Commit: feat: follow-up timing fix, temperature sync, reservation integration
 - Follow-ups usam sequencia configuravel (nao mais delay da IA)

@@ -278,9 +278,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             { to: '/dashboard', icon: LayoutDashboard, label: 'Visão Geral', prefetch: 'dashboard' as const },
             { to: '/boards', icon: KanbanSquare, label: 'CRM / Pipeline', prefetch: 'dashboard' as const },
             { to: '/contacts', icon: Users, label: 'Contatos', prefetch: 'contacts' as const },
-            { to: '/whatsapp', icon: MessageSquare, label: 'WhatsApp', prefetch: 'whatsapp' as const },
-            { to: '/settings', icon: Settings, label: 'Configurações', prefetch: 'settings' as const },
-          ].map((item) => {
+            { to: '/settings', icon: Settings, label: 'Configurações', prefetch: 'settings' as const, adminOnly: true },
+          ]
+            .filter((item) => !item.adminOnly || profile?.role !== 'vendedor')
+            .map((item) => {
             if (sidebarCollapsed) {
               return (
                 <Link

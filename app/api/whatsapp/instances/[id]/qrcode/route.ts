@@ -3,6 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 import { getInstance } from '@/lib/supabase/whatsapp';
 import { getEvolutionCredentials } from '@/lib/evolution/helpers';
 import * as evolution from '@/lib/evolution/client';
+import QRCode from 'qrcode';
 
 type Params = { params: Promise<{ id: string }> };
 
@@ -41,13 +42,24 @@ export async function GET(_request: Request, { params }: Params) {
     const creds = await getEvolutionCredentials(supabase, instance);
     const result = await evolution.connectInstance(creds);
 
+    let qrValue = result.base64 || '';
+
+    // If Evolution API didn't return a base64 image, generate it from the code
+    if (!qrValue && result.code) {
+      console.log('[whatsapp] Evolution API returned code but no base64. Generating QR code locally.');
+      const generated = await QRCode.toDataURL(result.code);
+      // Remove the prefix "data:image/png;base64," because the frontend adds it
+      qrValue = generated.replace(/^data:image\/png;base64,/, '');
+    }
+
     return NextResponse.json({
       data: {
-        value: result.base64 || result.code || '',
+        value: qrValue,
         connected: false,
       },
     });
-  } catch {
+  } catch (err: unknown) {
+    console.error('[whatsapp] Failed to get QR Code:', err);
     return NextResponse.json(
       { error: 'Não foi possível obter o QR Code. Verifique se a instância está ativa na Evolution API.' },
       { status: 502 },

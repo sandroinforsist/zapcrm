@@ -3,10 +3,9 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
-import { SECONDARY_NAV, PRIMARY_NAV } from './navConfig';
+import { PRIMARY_NAV, SECONDARY_NAV } from './navConfig';
 import { useBranding } from '@/context/BrandingContext';
 import { getBrandInitials } from '@/lib/branding/defaults';
-import { useAuth } from '@/context/AuthContext';
 
 export interface NavigationRailProps {
   /** Optional: used only if we want to keep "More" as a sheet trigger (mobile-like). */
@@ -17,7 +16,6 @@ export function NavigationRail({ onOpenMore }: NavigationRailProps) {
   const pathname = usePathname();
   const { branding } = useBranding();
   const brandInitials = getBrandInitials(branding.brandName);
-  const { profile } = useAuth();
 
   const isHrefActive = (href: string) =>
     pathname === href ||
@@ -76,7 +74,7 @@ export function NavigationRail({ onOpenMore }: NavigationRailProps) {
         <div className="my-3 h-px bg-slate-200/60 dark:bg-white/10" />
 
         <div className="space-y-2">
-          {SECONDARY_NAV.filter(item => !item.adminOnly || profile?.role !== 'vendedor').map((item) => {
+          {SECONDARY_NAV.map((item) => {
             const Icon = item.icon;
             const isActive = isHrefActive(item.href);
             return (

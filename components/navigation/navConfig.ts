@@ -31,12 +31,11 @@ export interface SecondaryNavItem {
   label: string;
   href: string;
   icon: ComponentType<{ className?: string }>;
-  adminOnly?: boolean;
 }
 
 /** Mirrors non-primary destinations available in the desktop sidebar/user menu. */
 export const SECONDARY_NAV: SecondaryNavItem[] = [
   { id: 'dashboard', label: 'Visão Geral', href: '/dashboard', icon: LayoutDashboard },
-  { id: 'settings', label: 'Configurações', href: '/settings', icon: Settings, adminOnly: true },
+  { id: 'settings', label: 'Configurações', href: '/settings', icon: Settings },
   { id: 'profile', label: 'Perfil', href: '/profile', icon: User },
 ];

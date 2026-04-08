@@ -47,10 +47,11 @@ export async function GET(_request: Request, { params }: Params) {
     // If Evolution API didn't return a base64 image, generate it from the code
     if (!qrValue && result.code) {
       console.log('[whatsapp] Evolution API returned code but no base64. Generating QR code locally.');
-      const generated = await QRCode.toDataURL(result.code);
-      // Remove the prefix "data:image/png;base64," because the frontend adds it
-      qrValue = generated.replace(/^data:image\/png;base64,/, '');
+      qrValue = await QRCode.toDataURL(result.code);
     }
+
+    // Always strip the prefix if it exists, because the frontend adds it
+    qrValue = qrValue.replace(/^data:image\/png;base64,/, '');
 
     return NextResponse.json({
       data: {

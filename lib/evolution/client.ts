@@ -89,7 +89,7 @@ export interface CreateInstanceResponse {
     instanceId: string;
     status: string;
   };
-  hash: {
+  hash: string | {
     apikey: string;
   };
   settings: Record<string, unknown>;

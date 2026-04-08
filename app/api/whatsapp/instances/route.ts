@@ -143,7 +143,7 @@ export async function POST(request: Request) {
     .from('whatsapp_instances')
     .update({
       instance_id: evoResult.instance.instanceId,
-      instance_token: evoResult.hash.apikey,
+      instance_token: typeof evoResult.hash === 'string' ? evoResult.hash : evoResult.hash.apikey,
       webhook_url: webhookUrl,
       updated_at: new Date().toISOString(),
     })
@@ -153,7 +153,7 @@ export async function POST(request: Request) {
 
   const instanceCreds: evolution.EvolutionCredentials = {
     baseUrl,
-    apiKey: evoResult.hash.apikey,
+    apiKey: typeof evoResult.hash === 'string' ? evoResult.hash : evoResult.hash.apikey,
     instanceName,
   };
 
